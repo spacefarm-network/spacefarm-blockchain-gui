@@ -9,8 +9,8 @@ import {
   Keys as KeysIcon,
   Home as HomeIcon,
   Plot as PlotIcon,
-} from '@flax/icons';
-import { Flex, SideBarItem } from '@flax/core';
+} from '@spacefarm/icons';
+import { Flex, SideBarItem } from '@spacefarm/core';
 import { logOut } from '../../modules/message';
 
 const StyledRoot = styled(Flex)`

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Trans } from '@lingui/macro';
-import { AlertDialog } from '@flax/core';
+import { AlertDialog } from '@spacefarm/core';
 import {
   Typography,
   Button,
@@ -20,7 +20,7 @@ import {
 } from '../../../modules/createWallet';
 import { useStyles } from './WalletCreate';
 import { create_cc_action } from '../../../modules/message';
-import { flax_to_mojo } from '../../../util/flax';
+import { spacefarm_to_mojo } from '../../../util/spacefarm';
 import { openDialog } from '../../../modules/dialog';
 
 export const customStyles = makeStyles((theme) => ({
@@ -87,8 +87,8 @@ export const CreateNewCCWallet = () => {
       return;
     }
     dispatch(createState(true, true));
-    const amount = flax_to_mojo(amount_input.value);
-    const fee = flax_to_mojo(fee_input.value);
+    const amount = spacefarm_to_mojo(amount_input.value);
+    const fee = spacefarm_to_mojo(fee_input.value);
     dispatch(create_cc_action(amount, fee));
   }
 

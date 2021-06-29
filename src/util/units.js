@@ -1,17 +1,17 @@
 const units = {
-  flax: 1,
+  spacefarm: 1,
   mojo: 1 / 1e12,
   colouredcoin: 1 / 1e9,
 };
 
 const aliases = {
-  flax: ['ch', 'flax', 'Flax'],
+  spacefarm: ['ch', 'spacefarm', 'Spacefarm'],
   mojo: ['mj', 'mojo'],
   colouredcoin: ['cc', 'colouredcoin'],
 };
 
 const display = {
-  flax: {
+  spacefarm: {
     format: '{amount} CH',
     fractionDigits: 12,
   },

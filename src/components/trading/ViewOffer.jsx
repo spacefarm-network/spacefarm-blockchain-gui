@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from 'react-redux';
 import React, { useMemo } from 'react';
-import { Dropzone } from '@flax/core';
+import { Dropzone } from '@spacefarm/core';
 import { Trans } from '@lingui/macro';
 import { Button } from '@material-ui/core';
 import {
@@ -14,7 +14,7 @@ import {
   accept_trade_action,
   parse_trade_action,
 } from '../../modules/trade_messages';
-import { Card } from '@flax/core';
+import { Card } from '@spacefarm/core';
 import TradesTable from './TradesTable';
 
 /* global BigInt */

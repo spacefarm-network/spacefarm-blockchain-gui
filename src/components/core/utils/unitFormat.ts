@@ -8,8 +8,8 @@ type Options = {
 };
 
 const defaultOptions = {
-  to: Unit.FLAX,
-  from: Unit.FLAX,
+  to: Unit.SPACEFARM,
+  from: Unit.SPACEFARM,
 };
 
 export default function unitFormat(value: number, options: Options): string {

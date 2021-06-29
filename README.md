@@ -1,3 +1,3 @@
-# flax-blockchain
+# spacefarm-blockchain
 
-This is the GUI for flax-blockchain. It is built into distribution packages in the flax-blockchain repository.
+This is the GUI for spacefarm-blockchain. It is built into distribution packages in the spacefarm-blockchain repository.

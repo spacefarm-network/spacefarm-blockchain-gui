@@ -2,8 +2,8 @@ import React from 'react';
 import { Trans } from '@lingui/macro';
 import { useHistory } from 'react-router-dom';
 import { Button, Grid, Typography, Divider } from '@material-ui/core';
-import { CardHero, Link } from '@flax/core';
-import { PlotHero as PlotHeroIcon } from '@flax/icons';
+import { CardHero, Link } from '@spacefarm/core';
+import { PlotHero as PlotHeroIcon } from '@spacefarm/icons';
 import PlotAddDirectoryDialog from '../PlotAddDirectoryDialog';
 import useOpenDialog from '../../../hooks/useOpenDialog';
 
@@ -28,8 +28,8 @@ export default function PlotOverviewHero() {
           <PlotHeroIcon fontSize="large" />
           <Typography variant="body1">
             <Trans>
-              {'Plots are allocated space on your hard drive used to farm and earn Flax. '}
-              <Link target="_blank" href="https://github.com/Flax-Network/flax-blockchain/wiki/Network-Architecture">Learn more</Link>
+              {'Plots are allocated space on your hard drive used to farm and earn Spacefarm. '}
+              <Link target="_blank" href="https://github.com/spacefarm-network/spacefarm-blockchain/wiki/Network-Architecture">Learn more</Link>
             </Trans>
           </Typography>
           <Button

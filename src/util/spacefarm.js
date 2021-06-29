@@ -12,7 +12,7 @@ const convert = (amount, from, to) => {
   return Number.parseFloat(amountInFromUnit.div(units.getUnit(to)));
 };
 
-class Flax {
+class Spacefarm {
   constructor(value, unit) {
     this._value = value;
     this._unit = unit;
@@ -73,42 +73,42 @@ class Flax {
   }
 }
 
-export const flax_formatter = (value, unit) => new Flax(value, unit);
+export const spacefarm_formatter = (value, unit) => new Spacefarm(value, unit);
 
-flax_formatter.convert = convert;
-flax_formatter.setDisplay = units.setDisplay;
-flax_formatter.setUnit = units.setUnit;
-flax_formatter.getUnit = units.getUnit;
-flax_formatter.setFiat = (currency, rate, display = null) => {
+spacefarm_formatter.convert = convert;
+spacefarm_formatter.setDisplay = units.setDisplay;
+spacefarm_formatter.setUnit = units.setUnit;
+spacefarm_formatter.getUnit = units.getUnit;
+spacefarm_formatter.setFiat = (currency, rate, display = null) => {
   units.setUnit(currency, 1 / rate, display);
 };
 
-export const mojo_to_flax = (mojo) => {
-  return flax_formatter(Number.parseInt(mojo), 'mojo').to('flax').value();
+export const mojo_to_spacefarm = (mojo) => {
+  return spacefarm_formatter(Number.parseInt(mojo), 'mojo').to('spacefarm').value();
 };
 
-export const flax_to_mojo = (flax) => {
-  return flax_formatter(Number.parseFloat(Number(flax)), 'flax')
+export const spacefarm_to_mojo = (spacefarm) => {
+  return spacefarm_formatter(Number.parseFloat(Number(spacefarm)), 'spacefarm')
     .to('mojo')
     .value();
 };
 
-export const mojo_to_flax_string = (mojo) => {
-  return flax_formatter(Number(mojo), 'mojo').to('flax').toString();
+export const mojo_to_spacefarm_string = (mojo) => {
+  return spacefarm_formatter(Number(mojo), 'mojo').to('spacefarm').toString();
 };
 
 export const mojo_to_colouredcoin = (mojo) => {
-  return flax_formatter(Number.parseInt(mojo), 'mojo')
+  return spacefarm_formatter(Number.parseInt(mojo), 'mojo')
     .to('colouredcoin')
     .value();
 };
 
 export const colouredcoin_to_mojo = (colouredcoin) => {
-  return flax_formatter(Number.parseFloat(Number(colouredcoin)), 'colouredcoin')
+  return spacefarm_formatter(Number.parseFloat(Number(colouredcoin)), 'colouredcoin')
     .to('mojo')
     .value();
 };
 
 export const mojo_to_colouredcoin_string = (mojo) => {
-  return flax_formatter(Number(mojo), 'mojo').to('colouredcoin').toString();
+  return spacefarm_formatter(Number(mojo), 'mojo').to('colouredcoin').toString();
 };

@@ -13,12 +13,12 @@ import AccordionDetails from '@material-ui/core/AccordionDetails';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import { Tooltip } from '@material-ui/core';
 import HelpIcon from '@material-ui/icons/Help';
-import { AlertDialog, Card, Flex } from '@flax/core';
+import { AlertDialog, Card, Flex } from '@spacefarm/core';
 import {
   send_transaction,
   rl_set_user_info_action,
 } from '../../../modules/message';
-import { mojo_to_flax_string, flax_to_mojo } from '../../../util/flax';
+import { mojo_to_spacefarm_string, spacefarm_to_mojo } from '../../../util/spacefarm';
 import { get_transaction_result } from '../../../util/transaction_result';
 import { openDialog } from '../../../modules/dialog';
 import WalletHistory from '../WalletHistory';
@@ -251,17 +251,17 @@ const IncompleteCard = (props) => {
     const ip_debuf = ip_unhex.toString('utf8');
     const ip_parsed = JSON.parse(ip_debuf);
     const interval_input = ip_parsed.interval;
-    const flaxper_input = ip_parsed.limit;
+    const spacefarmper_input = ip_parsed.limit;
     const origin_input = ip_parsed.origin_string;
     const admin_pubkey_input = ip_parsed.admin_pubkey;
     const interval_value = Number.parseInt(Number(interval_input));
-    const flaxper_value = Number.parseInt(Number(flaxper_input));
+    const spacefarmper_value = Number.parseInt(Number(spacefarmper_input));
     const origin_parsed = JSON.parse(origin_input);
     dispatch(
       rl_set_user_info_action(
         id,
         interval_value,
-        flaxper_value,
+        spacefarmper_value,
         origin_parsed,
         admin_pubkey_input,
       ),
@@ -413,8 +413,8 @@ const RLDetailsCard = (props) => {
             <Box flexGrow={1}>
               <Typography variant="subtitle1">
                 <Trans>
-                  Spending Limit (flax per interval):{' '}
-                  {mojo_to_flax_string(limit)}
+                  Spending Limit (spacefarm per interval):{' '}
+                  {mojo_to_spacefarm_string(limit)}
                 </Trans>
               </Typography>
             </Box>
@@ -464,8 +464,8 @@ const RLDetailsCard = (props) => {
             <Box flexGrow={1}>
               <Typography variant="subtitle1">
                 <Trans>
-                  Spending Limit (flax per interval):{' '}
-                  {mojo_to_flax_string(limit)}
+                  Spending Limit (spacefarm per interval):{' '}
+                  {mojo_to_spacefarm_string(limit)}
                 </Trans>
               </Typography>
             </Box>
@@ -532,7 +532,7 @@ const BalanceCardSubSection = (props) => {
         </Box>
         <Box>
           <Typography variant="subtitle1">
-            {mojo_to_flax_string(props.balance)} {currencyCode}
+            {mojo_to_spacefarm_string(props.balance)} {currencyCode}
           </Typography>
         </Box>
       </Box>
@@ -696,8 +696,8 @@ const SendCard = (props) => {
       );
       return;
     }
-    const amount = flax_to_mojo(amount_input.value);
-    const fee = flax_to_mojo(fee_input.value);
+    const amount = spacefarm_to_mojo(amount_input.value);
+    const fee = spacefarm_to_mojo(fee_input.value);
 
     if (address.startsWith('0x') || address.startsWith('0X')) {
       address = address.slice(2);

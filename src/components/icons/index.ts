@@ -1,4 +1,4 @@
-export { default as Flax } from './Flax';
+export { default as Spacefarm } from './Spacefarm';
 export { default as Farm } from './Farm';
 export { default as Home } from './Home';
 export { default as Keys } from './Keys';
